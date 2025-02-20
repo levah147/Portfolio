@@ -28,9 +28,13 @@
                 <img src="{% static 'images/pro/p3.jpeg' %}" alt="">
             </div>
             <div class="column right">
-                <div class="text">I'm Prakash and I'm a <span class="typing-2"></span></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut voluptatum eveniet doloremque autem excepturi eaque, sit laboriosam voluptatem nisi delectus. Facere explicabo hic minus accusamus alias fuga nihil dolorum quae. Explicabo illo unde, odio consequatur ipsam possimus veritatis, placeat, ab molestiae velit inventore exercitationem consequuntur blanditiis omnis beatae. Dolor iste excepturi ratione soluta quas culpa voluptatum repudiandae harum non.</p>
-                <a href="#">Download CV</a>
+                <div class="text">I'm Levah and I'm a <span class="typing-2"></span></div>
+                <p>I'm a passionate and innovative developer who thrives on creating impactful digital solutions. With a strong foundation in both app development and full-stack web development, I excel in building robust, scalable applications that seamlessly blend sleek user interfaces with efficient, secure backends.
+
+                    I approach each project with a blend of creativity and technical expertise, ensuring that every solution is not only functional but also intuitive and engaging. My work reflects a commitment to continuous learning and a drive to stay ahead of industry trends, enabling me to deliver cutting-edge, reliable software solutions.
+                    
+                    Whether it's crafting dynamic mobile apps or designing comprehensive web systems, I take pride in my ability to turn complex challenges into elegant, user-friendly products. Let's build something great together!</p>
+                <a href="{% url 'app:download_cv' %}">Download CV</a>
             </div>
         </div>
     </div>
@@ -212,25 +216,35 @@
             </div>
             <div class="column right">
                 <div class="text">Message me</div>
-                <form action="#">
-                    <div class="fields">
-                        <div class="field name">
-                            <input type="text" placeholder="Name" required>
-                        </div>
-                        <div class="field email">
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Subject" required>
-                    </div>
-                    <div class="field textarea">
-                        <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
-                    </div>
-                    <div class="button-area">
-                        <button type="submit">Send message</button>
-                    </div>
-                </form>
+                <!-- Display messages if any -->
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form action="{% url 'app:contact' %}" method="post">
+      {% csrf_token %}
+      <div class="fields">
+          <div class="field name">
+              {{ form.name }}
+          </div>
+          <div class="field email">
+              {{ form.email }}
+          </div>
+      </div>
+      <div class="field">
+          {{ form.subject }}
+      </div>
+      <div class="field textarea">
+          {{ form.message }}
+      </div>
+      <div class="button-area">
+          <button type="submit">Send Message</button>
+      </div>
+  </form>
             </div>
         </div>
     </div>
