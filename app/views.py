@@ -3,14 +3,24 @@ import os
 from django.conf import settings
 from django.http import FileResponse, Http404
 
+
 def download_cv(request):
-    file_path = os.path.join(settings.MEDIA_ROOT, 'cv/mycv.pdf')
-    # Debug: Log or print the file_path to verify it's correct
+    # Define the filename; you can change this value or even retrieve it dynamically
+    filename = 'MyCV.pdf'  # This can be any file name you want
+    file_path = os.path.join(settings.MEDIA_ROOT, 'cv', filename)
+    
+    # For debugging: print the file path (visible in your server logs)
     print("Looking for CV at:", file_path)
+    
     if os.path.exists(file_path):
-        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename='MyCV.pdf')
+        return FileResponse(
+            open(file_path, 'rb'),
+            as_attachment=True,
+            filename=filename  # The name the user will see when downloading
+        )
     else:
         raise Http404("CV not found")
+
 
 
 
