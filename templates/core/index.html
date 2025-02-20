@@ -12,7 +12,9 @@
             <div class="text-1">Hello, my name is</div>
             <div class="text-2">Emmanuel Levah</div>
             <div class="text-3">And I'm a <span class="typing"></span></div>
-            <a href="{% url 'app:hire' %}">Hire me</a>
+            <a href="/">Hire me</a>
+            {% comment %} <a href="{% url 'app:hire' %}">Hire me</a> {% endcomment %}
+
         </div>
     </div>
 </section>
@@ -43,7 +45,7 @@
             <div class="card">
                 <div class="box">
                     <i class="fas fa-paint-brush"></i>
-                    <div class="text">Web Design</div>
+                    <div class="text">Web Development</div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
                 </div>
             </div>
@@ -57,7 +59,7 @@
             <div class="card">
                 <div class="box">
                     <i class="fas fa-code"></i>
-                    <div class="text">Apps Design</div>
+                    <div class="text">Apps Development</div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
                 </div>
             </div>
@@ -73,8 +75,11 @@
         <div class="skills-content">
             <div class="column left">
                 <div class="text">My creative skills & experiences.</div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ratione error est recusandae consequatur, iusto illum deleniti quidem impedit, quos quaerat quis minima sequi. Cupiditate recusandae laudantium esse, harum animi aspernatur quisquam et delectus ipsum quam alias quaerat? Quasi hic quidem illum. Ad delectus natus aut hic explicabo minus quod.</p>
-                <a href="#">Read more</a>
+                <p>Passionate Software Engineering graduate with expertise in full-stack development, IT support,
+                    and project management. Proficient in software lifecycle management, Agile methodologies,
+                    and problem-solving. Adept at developing scalable, efficient, and secure software solutions.
+                    Enthusiastic about continuous learning and leveraging technology for innovation.</p>
+                <a href="{% url 'app:skills' %}">Read more</a>
             </div>
             <div class="column right">
                 <div class="bars">
@@ -133,37 +138,37 @@
         <div class="carousel owl-carousel">
             <div class="card">
                 <div class="box">
-                    <img src="{% static 'images/profile-1.jpeg' %}" alt="">
-                    <div class="text">Someone name</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img  src="https://media.licdn.com/dms/image/v2/D4D03AQH27hHQ0YXjUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715975073312?e=1745452800&v=beta&t=zBWW1wAfMSLHl6eYhIewBYUwpkAjnNkvB38Zmajy3uo" alt="">
+                    <div class="text">Sylvia Nnoruka</div>
+                    <p>Front-end Software Developer | HTML | CSS | JavaScript | Tailwind Css</p>
                 </div>
             </div>
             <div class="card">
                 <div class="box">
-                    <img src="{% static 'images/profile-2.jpeg' %}" alt="">
-                    <div class="text">Someone name</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQG--EErfnOkMQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718264120522?e=1745452800&v=beta&t=M30b8i4PmkQicXCxKuG_ceQk87NkHEw2XQPPHIH-31s" alt="">
+                    <div class="text">Adetomiwa Adejumo</div>
+                    <p>Computer Engineer | Frontend Developer | Vue.Js, Django, C | Zuri Internship Certified | Passionate about Advancing Automation and Agriculture through Technology.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="box">
-                    <img src="{% static 'images/profile-3.jpeg' %}" alt="">
-                    <div class="text">Someone name</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQES0C_xXaAV6g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670853690219?e=1745452800&v=beta&t=qNjfN9ztX55dBE-L-Waz3NrUgl7Z03f0seYIoGmDvak" alt="">
+                    <div class="text">Ezeokoli (Ifeoma) Goodness</div>
+                    <p>Frontend Developer</p>
                 </div>
             </div>
             <div class="card">
                 <div class="box">
-                    <img src="{% static 'images/profile-4.jpeg' %}" alt="">
-                    <div class="text">Someone name</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQGbAxzaylBDSw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1713516102096?e=1745452800&v=beta&t=KCTWrh5cCkB7or1JMC2kYwbxLLRmORb6ruUHpmNJRX4" alt="">
+                    <div class="text">Levah Emmanuel Nater</div>
+                    <p>Web Developer · Web Designer · Full Stack Engineer · Python Developer · Software Engineer</p>
                 </div>
             </div>
             <div class="card">
                 <div class="box">
-                    <img src="{% static 'images/profile-5.jpeg' %}" alt="">
-                    <div class="text">Someone name</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D35AQH4t5GcTcUmGQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1735999880031?e=1740657600&v=beta&t=yVg-wZ78yOZ0zHK_B8xQexwcZ0x2OF7WedFO4AcaIgg" alt="">
+                    <div class="text">Ifeoluwa (Olaoluwa) Awosanya</div>
+                    <p>Tech Explorer | Networking & Data Science Enthusiast | Seeking Growth Opportunities in IT & Data Analytics</p>
                 </div>
             </div>
         </div>
@@ -177,7 +182,8 @@
         <div class="contact-content">
             <div class="column left">
                 <div class="text">Get in Touch</div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
+                <p>Thank you for reaching out! We’d love to hear from you—whether you have a question, feedback, or just want to say hello. Please fill out the form below with your details and
+                     message, and we’ll get back to you as soon as possible. Your thoughts and inquiries are important to us, and we're here to help!</p>
                 <div class="icons">
                     <div class="row">
                         <i class="fas fa-user"></i>

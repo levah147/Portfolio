@@ -1,0 +1,74 @@
+ {% extends "base.html" %}
+{% load static %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+
+
+<!-- skills section start -->
+<section class="skills" id="skills">
+    <div class="max-width">
+        <h2 class="title">My skills</h2>
+        <div class="skills-content">
+            <div class="column left">
+                <div class="text">My creative skills & experiences.</div>
+                <p>Passionate Software Engineering graduate with expertise in full-stack development, IT support,
+                    and project management. Proficient in software lifecycle management, Agile methodologies,
+                    and problem-solving. Adept at developing scalable, efficient, and secure software solutions.
+                    Enthusiastic about continuous learning and leveraging technology for innovation.</p>
+                {% comment %} <a href="{% url 'skill' %}">Read more</a> {% endcomment %}
+            </div>
+            <div class="column right">
+                <div class="bars">
+                    <div class="info">
+                        <span>HTML</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="line html"></div>
+                </div>
+                <div class="bars">
+                    <div class="info">
+                        <span>CSS</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="line css"></div>
+                </div>
+                <!--  -->
+                <div class="bars">
+                    <div class="info">
+                        <span>JavaScript</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="line js"></div>
+                </div>
+                <!--  -->
+                <div class="bars">
+                    <div class="info">
+                        <span>Python</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="line html"></div>
+                </div>
+                <div class="bars">
+                    <div class="info">
+                        <span>Django</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="line html"></div>
+                </div>
+                <div class="bars">
+                    <div class="info">
+                        <span>PostgreSQL</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="line mysql"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
