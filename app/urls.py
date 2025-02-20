@@ -6,9 +6,9 @@ from .views import download_cv
 
 app_name = "app"
 urlpatterns = [
-     path('', views.index, name='index'),
+     # path('', views.index, name='index'),
      path('download-cv/', download_cv, name='download_cv'),
-     path('contact/', views.contact_view, name='contact'),
+     path('', views.contact, name='index'),
      
      # path('about/', views.about, name='about'),
      # path('contact/', views.contact, name='contact'),

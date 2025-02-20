@@ -1,23 +1,23 @@
 from django.shortcuts import render,redirect
-from django.http import FileResponse, Http404
-from django.conf import settings
 import os
-from django.contrib import messages
-from .forms import ContactForm
-
+from django.conf import settings
+from django.http import FileResponse, Http404
 
 def download_cv(request):
     file_path = os.path.join(settings.MEDIA_ROOT, 'cv/mycv.pdf')
+    # Debug: Log or print the file_path to verify it's correct
+    print("Looking for CV at:", file_path)
     if os.path.exists(file_path):
         return FileResponse(open(file_path, 'rb'), as_attachment=True, filename='MyCV.pdf')
-    raise Http404("CV not found")
+    else:
+        raise Http404("CV not found")
 
 
 
 
 
-def index(request):
-    return render(request, 'core/index.html')
+# def index(request):
+#     return render(request, 'core/index.html')
 
 # def about(request):
 #     return render(request, 'core/about.html')
@@ -31,21 +31,24 @@ def skill(request):
 # def teams(request):
 #     return render(request, 'core/teams.html')
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import ContactMessageForm
 
-
-def contact_view(request):
-    if request.method == "POST":
-        form = ContactForm(request.POST)
+def contact(request):
+    if request.method == 'POST':
+        form = ContactMessageForm(request.POST)
         if form.is_valid():
-            form.save()  # Saves the form data to the database
-            messages.success(request, "Thank you for your message! We'll get back to you soon.")
-            return redirect('contact')
+            form.save()  # Saves the submission to the database
+            messages.success(request, "Your message has been sent successfully!")
+            return redirect('/')  # Redirect to a 'thank you' page or reload form
         else:
-            messages.error(request, "There was an error with your submission. Please check the form and try again.")
+            messages.error(request, "There was an error in your form. Please correct it and try again.")
     else:
-        form = ContactForm()
+        form = ContactMessageForm()
     
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'core/index.html', {'form': form})
+
 
 
 
